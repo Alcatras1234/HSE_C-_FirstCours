@@ -2,9 +2,10 @@
 
 int64_t SumOfDigits(int64_t number) {
     int64_t sum = 0;
+    const int64_t strong = 10;
     while (number > 0) {
-        sum += number % 10;
-        number /= 10;
+        sum += number % strong;
+        number /= strong;
     }
     return sum;
 }
