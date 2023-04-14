@@ -1,10 +1,12 @@
 #include "is_leap.h"
 
 bool IsLeap(int year) {
-    if (year % 4 == 0 && year % 100 != 0) {
+    const int first_magicnumber = 400;
+    const int second_magicnumber = 100;
+    if (year % 4 == 0 && year % second_magicnumber != 0) {
         return true;
     }
-    if (year % 400 == 0) {
+    if (year % first_magicnumber == 0) {
         return true;
     }
     return false;
