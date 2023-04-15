@@ -13,6 +13,6 @@ int64_t ReduceFraction(int64_t numerator, int64_t denominator) {
         }
         i--;
     }
-    sum += a1 / i + a2 / i;
+    sum = a1 / i + a2 / i;
     return sum;
 }
