@@ -1,6 +1,11 @@
 #include "sum_digits.h"
 
-
 int64_t SumOfDigits(int64_t number) {
-    return 0;
+    int64_t sum = 0;
+    const int64_t strong = 10;
+    while (number > 0) {
+        sum += number % strong;
+        number /= strong;
+    }
+    return sum;
 }
