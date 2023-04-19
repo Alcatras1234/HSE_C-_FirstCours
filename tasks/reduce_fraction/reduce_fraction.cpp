@@ -2,14 +2,14 @@
 
 int64_t ReduceFraction(int64_t numerator, int64_t denominator) {
     int64_t sum = 0;
-    int64_t a1 = numerator;
-    int64_t a2 = denominator;
+    int64_t numerator1 = numerator;
+    int64_t denominator1 = denominator;
     int64_t gsd = INT64_MAX;
     while (gsd > 0) {
-        gsd = a1 % a2;
-        a1 = a2;
-        a2 = gsd;
+        gsd = numerator1 % denominator1;
+        numerator1 = denominator1;
+        denominator1 = gsd;
     }
-    sum = numerator / a1 + denominator / a1;
+    sum = numerator / numerator1 + denominator / numerator1;
     return sum;
 }
