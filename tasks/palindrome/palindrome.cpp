@@ -9,8 +9,7 @@ bool IsPalindrome(const std::string& str) {
     while (left < right) {
         if (str[left] == ' ') {
             left++;
-        }
-        if (str[right] == ' ') {
+        } else if (str[right] == ' ') {
             right--;
         } else if (str[left] == str[right]) {
             left++;
