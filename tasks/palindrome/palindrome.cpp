@@ -8,12 +8,12 @@ bool IsPalindrome(const std::string& str) {
     }
     while (left < right) {
         if (str[left] == ' ') {
-            left++;
+            ++left;
         } else if (str[right] == ' ') {
-            right--;
+            --right;
         } else if (str[left] == str[right]) {
-            left++;
-            right--;
+            ++left;
+            --right;
         } else {
             return false;
         }
