@@ -4,7 +4,7 @@ int CompareDate(Student student, Student student1);
 int CompareName(Student student, Student student1);
 int CompareStudent(Student& student, Student& student1, SortKind kind);
 void SortStudents(std::vector<Student>& students, SortKind sort_kind) {
-    int vec_size = students.size();
+    int vec_size = static_cast<int>(students.size());
     for (int i = 0; i < vec_size; ++i) {
         for (int j = i + 1; j < vec_size; ++j) {
             if (CompareStudent(students[i], students[j], sort_kind) > 0) {
