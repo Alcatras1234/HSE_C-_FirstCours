@@ -3,11 +3,11 @@
 int CompareDate(Student student, Student student1);
 int CompareName(Student student, Student student1);
 int CompareStudent(Student& student, Student& student1, SortKind kind);
-void SortStudents(std::vector<Student>& students, SortKind sortKind) {
+void SortStudents(std::vector<Student>& students, SortKind sort_kind) {
     int vec_size = students.size();
     for (int i = 0; i < vec_size; ++i) {
         for (int j = i + 1; j < vec_size; ++j) {
-            if (CompareStudent(students[i], students[j], sortKind) > 0) {
+            if (CompareStudent(students[i], students[j], sort_kind) > 0) {
                 Student time = students[j];
                 students[j] = students[i];
                 students[i] = time;
@@ -15,9 +15,9 @@ void SortStudents(std::vector<Student>& students, SortKind sortKind) {
         }
     }
 }
-int CompareStudent(Student& student1, Student& student2, SortKind sortKind) {
+int CompareStudent(Student& student1, Student& student2, SortKind sort_kind) {
     int compareres = 0;
-    if (sortKind == SortKind::Date) {
+    if (sort_kind == SortKind::Date) {
         compareres = CompareDate(student1, student2);
     } else {
         compareres = CompareName(student1, student2);
