@@ -19,8 +19,7 @@ int CompareStudent(Student& student1, Student& student2, SortKind sortKind) {
     int compareres = 0;
     if (sortKind == SortKind::Date) {
         compareres = CompareDate(student1, student2);
-    }
-    else {
+    } else {
         compareres = CompareName(student1, student2);
     }
     return compareres;
@@ -51,7 +50,7 @@ int CompareName(Student student, Student student1) {
     if (student.last_name > student1.last_name) {
         return 1;
     }
-    if (student.last_name < student1.last_name){
+    if (student.last_name < student1.last_name) {
         return -1;
     }
     if (student.name > student1.name) {
