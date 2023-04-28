@@ -14,19 +14,18 @@ bool ValidatePassword(const std::string& password) {
     if (password.length() >= low_length && password.length() <= max_length) {
         for (std::__cxx11::basic_string<char>::size_type i = 0; i < password.length(); ++i) {
             int passwordchar = password[i];
-            if (passwordchar < thertythree) {
-                if (passwordchar > onehundredtwentysix) {
-                    return false;
+            if (passwordchar >= thertythree && passwordchar <= onehundredtwentysix) {
+                if (std::islower(passwordchar)) {
+                    lowerchar = 1;
+                } else if (std::isupper(passwordchar)) {
+                    upchar = 1;
+                } else if (std::isdigit(passwordchar)) {
+                    number = 1;
+                } else {
+                    other = 1;
                 }
-            }
-            if (std::islower(passwordchar)) {
-                lowerchar = 1;
-            } else if (std::isupper(passwordchar)) {
-                upchar = 1;
-            } else if (std::isdigit(passwordchar)) {
-                number = 1;
             } else {
-                other = 1;
+                return false;
             }
         }
     }
