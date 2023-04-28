@@ -21,4 +21,3 @@ enum class SortKind {
 };
 
 void SortStudents(std::vector<Student>& students, SortKind sortKind);
-
