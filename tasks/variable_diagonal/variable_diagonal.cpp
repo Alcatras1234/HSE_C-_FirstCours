@@ -13,7 +13,7 @@ int** BuildDiagonalArray(size_t lines, size_t columns) {
         }
     }
     for (size_t i = 1; i < lines; ++i) {
-        for (size_t j = i; j < columns; ++j) {
+        for (size_t j = i; j < lines; ++j) {
             matrix[j][columns - j + i - 1] = number;
             ++number;
         }
