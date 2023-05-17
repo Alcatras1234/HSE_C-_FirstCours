@@ -21,7 +21,7 @@ int32_t Stack::Top() const {
 void Stack::Push(int32_t value) {
     Node* new_node = new Node(value, head_);
     head_ = new_node;
-    size_++;
+    ++size_;
 }
 
 void Stack::Pop() {
