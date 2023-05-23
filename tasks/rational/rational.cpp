@@ -68,7 +68,7 @@ Rational& operator*=(Rational& lhs, const Rational& rhs) {
 }
 
 Rational& operator/=(Rational& lhs, const Rational& rhs) {
-    Rational flip (rhs.GetDenominator(), rhs.GetNumerator());
+    Rational flip(rhs.GetDenominator(), rhs.GetNumerator());
     return lhs *= flip;
 }
 
