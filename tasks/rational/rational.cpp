@@ -4,9 +4,10 @@ void Rational::Set(int64_t numer, int64_t denom) {
     if (denom == 0) {
         throw RationalDivisionByZero{};
     }
-
-    numer_ = static_cast<int>(numer);
-    denom_ = static_cast<int>(denom);
+    int mult_value = (denom > 0 ? 1 : -1);
+    int64_t gcd = std::gcd(numer, denom);
+    numer_ = mult_value * static_cast<int>(numer / gcd);
+    denom_ = static_cast<int>(denom * mult_value / gcd);
 }
 
 Rational::Rational() : numer_(0), denom_(1) {
@@ -34,8 +35,7 @@ void Rational::SetNumerator(int value) {
 }
 
 void Rational::SetDenominator(int value) {
-    int mult_value = (value > 0 ? 1 : -1);
-    Set(numer_ * mult_value, value * mult_value);
+    Set(numer_, value);
 }
 
 Rational operator+(const Rational& ratio) {
@@ -61,17 +61,15 @@ Rational& operator-=(Rational& lhs, const Rational& rhs) {
 }
 
 Rational& operator*=(Rational& lhs, const Rational& rhs) {
-    int answerdenom = lhs.denom_ * rhs.denom_;
-    int answernumer = lhs.numer_ * rhs.numer_;
-    int gcd = std::gcd(answerdenom, answernumer);
-    lhs.denom_ = answerdenom / gcd;
-    lhs.numer_ = answernumer / gcd;
+    int64_t numer = static_cast<int64_t>(lhs.numer_) * static_cast<int64_t>(rhs.numer_);
+    int64_t denom = static_cast<int64_t>(lhs.denom_) * static_cast<int64_t>(rhs.denom_);
+    lhs.Set(numer, denom);
     return lhs;
 }
 
 Rational& operator/=(Rational& lhs, const Rational& rhs) {
-    Rational flip{rhs.GetDenominator(), rhs.GetNumerator()};
-    return (lhs *= flip);
+    Rational flip (rhs.GetDenominator(), rhs.GetNumerator());
+    return lhs *= flip;
 }
 
 Rational operator+(const Rational& lhs, const Rational& rhs) {
