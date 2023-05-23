@@ -4,9 +4,9 @@ void Rational::Set(int64_t numer, int64_t denom) {
     if (denom == 0) {
         throw RationalDivisionByZero{};
     }
-    int mult = (denom > 0 ? 1 : -1);
+
     numer_ = static_cast<int>(numer);
-    denom_ = static_cast<int>(denom) * mult;
+    denom_ = static_cast<int>(denom);
 }
 
 Rational::Rational() : numer_(0), denom_(1) {
@@ -34,7 +34,8 @@ void Rational::SetNumerator(int value) {
 }
 
 void Rational::SetDenominator(int value) {
-    Set(numer_, value);
+    int mult = (value > 0 ? 1 : -1);
+    Set(numer_, value * mult);
 }
 
 Rational operator+(const Rational& ratio) {
@@ -100,7 +101,7 @@ Rational& operator++(Rational& ratio) {
 
 Rational operator++(Rational& ratio, int) {
     Rational copy = ratio;
-    ++copy;
+    ++ratio;
     return copy;
 }
 
@@ -111,7 +112,7 @@ Rational& operator--(Rational& ratio) {
 
 Rational operator--(Rational& ratio, int) {
     Rational copy = ratio;
-    --copy;
+    --ratio;
     return copy;
 }
 
