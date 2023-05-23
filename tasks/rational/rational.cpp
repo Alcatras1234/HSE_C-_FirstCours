@@ -9,7 +9,8 @@ void Rational::Set(int64_t numer, int64_t denom) {
     denom_ = static_cast<int>(denom) * mult;
 }
 
-Rational::Rational() : numer_(0), denom_(1){}
+Rational::Rational() : numer_(0), denom_(1){
+}
 
 Rational::Rational(int value) {
     numer_ = value;
