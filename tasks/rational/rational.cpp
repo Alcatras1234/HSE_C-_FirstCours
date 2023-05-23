@@ -4,7 +4,7 @@ void Rational::Set(int64_t numer, int64_t denom) {
     if (denom == 0) {
         throw RationalDivisionByZero{};
     }
-    int mult  = denom > 0 ? 1 : -1;
+    int mult = denom > 0 ? 1 : -1;
     numer_ = static_cast<int>(numer);
     denom_ = static_cast<int>(denom) * mult;
 }
@@ -15,13 +15,13 @@ Rational::Rational(int value) {
     numer_ = value;
     denom_ = 1;
 }
-Rational:: Rational(int numer, int denom) : numer_(0), denom_(0) {
+Rational::Rational(int numer, int denom) : numer_(0), denom_(0) {
     int gcd = std::gcd(numer, denom);
     int new_numer = numer / gcd;
     int new_denom = denom / gcd;
     Set(new_numer, new_denom);
 }
-int Rational::GetNumerator() const{
+int Rational::GetNumerator() const {
     return numer_;
 }
 int Rational::GetDenominator() const {
@@ -67,10 +67,9 @@ Rational& operator*=(Rational& lhs, const Rational& rhs) {
     return lhs;
 }
 
-Rational& operator/=(Rational& lhs, const Rational& rhs){
+Rational& operator/=(Rational& lhs, const Rational& rhs) {
     Rational flip{rhs.GetDenominator(), rhs.GetNumerator()};
     return (lhs *= flip);
-
 }
 
 Rational operator+(const Rational& lhs, const Rational& rhs) {
@@ -78,7 +77,7 @@ Rational operator+(const Rational& lhs, const Rational& rhs) {
     return (copy += rhs);
 }
 
-Rational operator-(const Rational& lhs, const Rational& rhs){
+Rational operator-(const Rational& lhs, const Rational& rhs) {
     Rational copy = lhs;
     return (copy -= rhs);
 }
@@ -116,7 +115,7 @@ Rational operator--(Rational& ratio, int) {
 }
 
 bool operator<(const Rational& lhs, const Rational& rhs) {
-    return((lhs - rhs).GetNumerator() < 0);
+    return ((lhs - rhs).GetNumerator() < 0);
 }
 
 bool operator>(const Rational& lhs, const Rational& rhs) {
@@ -128,7 +127,7 @@ bool operator<=(const Rational& lhs, const Rational& rhs) {
 }
 
 bool operator>=(const Rational& lhs, const Rational& rhs) {
-    return  !(lhs < rhs);
+    return !(lhs < rhs);
 }
 
 bool operator==(const Rational& lhs, const Rational& rhs) {
@@ -158,7 +157,3 @@ std::istream& operator>>(std::istream& is, Rational& ratio) {
     ratio.Set(numer, denom);
     return is;
 }
-
-
-
-
