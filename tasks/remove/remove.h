@@ -19,7 +19,7 @@ T Remove(T begin, T end, U value) {
         for (T i = first + 1; i != end; ++i) {
             if (*i != value) {
                 *first = *i;
-                first += 1;
+                ++first;
             }
         }
     }
