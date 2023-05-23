@@ -9,7 +9,7 @@ void Rational::Set(int64_t numer, int64_t denom) {
     denom_ = static_cast<int>(denom) * mult;
 }
 
-Rational::Rational() : numer_(0), denom_(1){};
+Rational::Rational() : numer_(0), denom_(1){}
 
 Rational::Rational(int value) {
     numer_ = value;
@@ -146,7 +146,8 @@ std::ostream& operator<<(std::ostream& os, const Rational& ratio) {
     return os;
 }
 std::istream& operator>>(std::istream& is, Rational& ratio) {
-    int numer, denom;
+    int numer = 0;
+    int denom = 0;
     is >> numer;
     if (is.peek() == '/') {
         is.ignore();
