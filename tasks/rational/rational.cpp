@@ -35,7 +35,7 @@ void Rational::SetNumerator(int value) {
 
 void Rational::SetDenominator(int value) {
     int mult = (value > 0 ? 1 : -1);
-    Set(numer_ * value, value * mult);
+    Set(numer_ * mult, value * mult);
 }
 
 Rational operator+(const Rational& ratio) {
