@@ -4,7 +4,7 @@ void Rational::Set(int64_t numer, int64_t denom) {
     if (denom == 0) {
         throw RationalDivisionByZero{};
     }
-    int mult = denom > 0 ? 1 : -1;
+    int mult = (denom > 0 ? 1 : -1);
     numer_ = static_cast<int>(numer);
     denom_ = static_cast<int>(denom) * mult;
 }
@@ -147,8 +147,8 @@ std::ostream& operator<<(std::ostream& os, const Rational& ratio) {
     return os;
 }
 std::istream& operator>>(std::istream& is, Rational& ratio) {
-    int numer = 0;
-    int denom = 0;
+    int numer;
+    int denom;
     is >> numer;
     if (is.peek() == '/') {
         is.ignore();
