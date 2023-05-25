@@ -40,7 +40,7 @@ Vector Vector::operator+() const {
 }
 
 Vector Vector::operator-() const {
-    return -*this;
+    return Vector(-x_coord_, -y_coord_);
 }
 
 Vector Vector::operator*(int64_t number) const {
