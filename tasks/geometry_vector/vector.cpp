@@ -100,7 +100,7 @@ int64_t VectorMult(const Vector& first, const Vector& second) {
     int64_t length_second = sqrt(pow(second.x_coord_, 2) + pow(second.y_coord_, 2));
     int64_t cos =
         (first.x_coord_ * second.x_coord_ + first.y_coord_ * second.y_coord_) / (lenght_first * length_second);
-    int64_t sin = sqrt((1 - cos * cos));
+    int64_t sin = sqrt(1 - cos * cos);
     return (lenght_first * length_second * sin);
 }
 
