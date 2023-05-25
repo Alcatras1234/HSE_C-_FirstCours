@@ -88,9 +88,9 @@ bool Vector::operator==(const Vector& other) const {
 }
 
 int64_t ScalarMult(const Vector& first, const Vector& second) {
-    double lenght_first = sqrt(pow(first.x_coord_, 2) + pow(first.y_coord_, 2));
-    double length_second = sqrt(pow(second.x_coord_, 2) + pow(second.y_coord_, 2));
-    double cos = (first.x_coord_ * second.x_coord_ + first.y_coord_ * second.y_coord_) / (lenght_first * length_second);
+    int64_t lenght_first = sqrt(pow(first.x_coord_, 2) + pow(first.y_coord_, 2));
+    int64_t length_second = sqrt(pow(second.x_coord_, 2) + pow(second.y_coord_, 2));
+    int64_t cos = (first.x_coord_ * second.x_coord_ + first.y_coord_ * second.y_coord_) / (lenght_first * length_second);
     return static_cast<int64_t>(lenght_first * length_second * cos);
 }
 
@@ -104,7 +104,7 @@ int64_t VectorMult(const Vector& first, const Vector& second) {
 }
 
 double Length(Vector vector) {
-    double length = sqrt(vector.x_coord_ * vector.x_coord_ + vector.y_coord_ * vector.y_coord_);
+    double length = sqrt(static_cast<double>(vector.x_coord_) * static_cast<double>(vector.x_coord_) + static_cast<double>(vector.y_coord_) * static_cast<double>(vector.y_coord_));
     return length;
 }
 }  // namespace geometry
