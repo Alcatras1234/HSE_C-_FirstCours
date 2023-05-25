@@ -13,7 +13,7 @@ Vector::Vector(int64_t x, int64_t y) {
     y_coord_ = y;
 }
 
-int64_t Vector::GetX(int64_t i) const {
+int64_t Vector::GetX() const {
     return x_coord_;
 }
 
@@ -90,8 +90,7 @@ bool Vector::operator==(const Vector& other) const {
 int64_t ScalarMult(const Vector& first, const Vector& second) {
     double lenght_first = sqrt(pow(first.x_coord_, 2) + pow(first.y_coord_, 2));
     double length_second = sqrt(pow(second.x_coord_, 2) + pow(second.y_coord_, 2));
-    double cos =
-        (first.x_coord_ * second.x_coord_ + first.y_coord_ * second.y_coord_) / (lenght_first * length_second);
+    double cos = (first.x_coord_ * second.x_coord_ + first.y_coord_ * second.y_coord_) / (lenght_first * length_second);
     return static_cast<int64_t>(lenght_first * length_second * cos);
 }
 
