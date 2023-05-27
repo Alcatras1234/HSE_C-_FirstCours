@@ -148,9 +148,9 @@ std::ostream& operator<<(std::ostream& os, const Rational& ratio) {
 std::istream& operator>>(std::istream& is, Rational& ratio) {
     int numer = 0;
     int denom = 0;
-    char slash = 0;
-    is >> numer >> slash;
-    if (slash == '/') {
+    is >> numer;
+    if (is.peek() == '/') {
+        is.ignore();
         is >> denom;
     } else {
         denom = 1;
@@ -159,8 +159,3 @@ std::istream& operator>>(std::istream& is, Rational& ratio) {
     return is;
 }
 
-int main() {
-    Rational r;
-    std::cin>>r;
-    std::cout<<r;
-}
