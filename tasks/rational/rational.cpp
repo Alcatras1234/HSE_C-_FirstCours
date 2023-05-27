@@ -158,4 +158,3 @@ std::istream& operator>>(std::istream& is, Rational& ratio) {
     ratio.Set(numer, denom);
     return is;
 }
-
