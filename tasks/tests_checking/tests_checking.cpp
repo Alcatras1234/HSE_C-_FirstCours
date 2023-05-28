@@ -8,8 +8,7 @@ std::vector<std::string> StudentsOrder(const std::vector<StudentAction>& student
     for (const StudentAction& student_action : student_actions) {
         if (student_action.side == Side::Top) {
             check_order.push_front(student_action.name);
-        }
-        else {
+        } else {
             check_order.push_back(student_action.name);
         }
     }
