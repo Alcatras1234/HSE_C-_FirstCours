@@ -1,7 +1,5 @@
 #include "vector.h"
 
-#include "cmath"
-
 namespace geometry {
 Vector::Vector() {
     x_coord_ = 0;
