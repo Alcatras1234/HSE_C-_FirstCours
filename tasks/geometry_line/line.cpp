@@ -2,8 +2,8 @@
 
 #include "i_shape.h"
 #include "point.h"
-#include "vector.h"
 #include "segment.h"
+#include "vector.h"
 
 namespace geometry {
 Line::Line(geometry::Point start, geometry::Point end) {
@@ -24,8 +24,7 @@ int64_t Line::GetC() const {
 }
 
 double Line::Distance(Point point) const {
-    double num = GetA() * point.GetX() + GetB() * point.GetY()
-                 + GetC();
+    double num = GetA() * point.GetX() + GetB() * point.GetY() + GetC();
     double abs_num = std::abs(num);
     double denom = std::sqrt(GetA() * GetA() + GetB() * GetB());
     return (abs_num / denom);
@@ -38,17 +37,17 @@ Line &Line::Move(const geometry::Vector &vector) {
 }
 
 bool Line::ContainsPoint(const geometry::Point &point) const {
-    return(GetA() * point.GetX() + GetB() * point.GetY() + GetC() == 0);
+    return (GetA() * point.GetX() + GetB() * point.GetY() + GetC() == 0);
 }
 
-bool Line::CrossesSegment(const Segment& segment) const {
+bool Line::CrossesSegment(const Segment &segment) const {
     int64_t first = GetA() * segment.GetStart().GetX() + GetB() * segment.GetStart().GetY() + GetC();
     int64_t second = GetA() * segment.GetEnd().GetX() + GetB() * segment.GetEnd().GetY() + GetC();
     return (first * second <= 0);
 }
 
 Line *Line::Clone() const {
-    auto clone = new Line (start_, end_);
+    auto clone = new Line(start_, end_);
     return clone;
 }
 }  // namespace geometry
