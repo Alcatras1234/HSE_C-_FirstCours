@@ -1,7 +1,6 @@
 #include "point.h"
 
 #include "segment.h"
-
 #include "vector.h"
 
 namespace geometry {
@@ -58,4 +57,3 @@ Point *Point::Clone() const {
     return clone;
 }
 }  // namespace geometry
-
