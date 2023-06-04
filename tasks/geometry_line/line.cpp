@@ -24,7 +24,7 @@ int64_t Line::GetC() const {
 }
 
 double Line::Distance(Point point) const {
-    double num = GetA() * point.GetX() + GetB() * point.GetY() + GetC();
+    double num = static_cast<double>(GetA() * point.GetX() + GetB() * point.GetY() + GetC());
     double abs_num = std::abs(num);
     double denom = std::sqrt(GetA() * GetA() + GetB() * GetB());
     return (abs_num / denom);
