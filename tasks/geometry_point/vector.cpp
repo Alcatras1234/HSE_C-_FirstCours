@@ -101,4 +101,3 @@ double Length(const Vector& vector) {
     return length;
 }
 }  // namespace geometry
-
