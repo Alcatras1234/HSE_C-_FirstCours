@@ -12,5 +12,5 @@ T Unique(T begin, T end) {
             *(++end_second) = *begin;
         }
     }
-    return end_second;
+    return ++end_second;
 }
