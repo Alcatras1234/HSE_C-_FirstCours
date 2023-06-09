@@ -7,7 +7,8 @@ StringView::StringView(const char *source) {
     size_ = std::strlen(string_);
 }
 
-StringView::StringView() : string_(nullptr), size_(0) {}
+StringView::StringView() : string_(nullptr), size_(0) {
+}
 
 StringView::StringView(const char *cstyle, size_t length) {
     string_ = cstyle;
@@ -85,7 +86,8 @@ void StringView::RemoveSuffix(size_t suffix_size) {
 StringView StringView::Substr(size_t pos, size_t count) {
     if (pos >= size_) {
         throw StringViewOutOfRange();
-    } if (count + pos > size_) {
+    }
+    if (count + pos > size_) {
         count = size_ - pos;
     }
     return StringView(string_ + pos, count);
