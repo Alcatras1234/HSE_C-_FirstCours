@@ -2,12 +2,12 @@
 
 template <typename Iterator>
 void Reverse(Iterator begin, Iterator end) {
-   while(begin != end && begin != --end) {
-       auto temp = *begin;
-       *begin = *end;
-       *end = temp;
-       ++begin;
-   }
+    while (begin != end && begin != --end) {
+        auto temp = *begin;
+        *begin = *end;
+        *end = temp;
+        ++begin;
+    }
 }
 
 template <typename Iterator>
