@@ -6,7 +6,7 @@ T Unique(T begin, T end) {
         return end;
     }
     T end_second = begin;
-    while(begin != end) {
+    while (begin != end) {
         ++begin;
         if (*end_second != *begin) {
             *(++end_second) = *begin;
