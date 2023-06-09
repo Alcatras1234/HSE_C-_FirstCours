@@ -12,7 +12,7 @@ void Reverse(Iterator begin, Iterator end) {
 
 template <typename Iterator>
 void Rotate(Iterator begin, Iterator mid, Iterator end) {
-    std::reverse(begin, mid);
-    std::reverse(mid, end);
-    std::reverse(begin, end);
+    reverse(begin, mid);
+    reverse(mid, end);
+    reverse(begin, end);
 }
