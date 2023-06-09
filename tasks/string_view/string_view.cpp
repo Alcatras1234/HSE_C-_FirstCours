@@ -65,7 +65,7 @@ void StringView::Swap(StringView &other) {
 }
 
 void StringView::RemovePrefix(size_t prefix_size) {
-    if (prefix_size >= size_) {
+    if (prefix_size > size_) {
         throw StringViewOutOfRange();
     } else {
         string_ += prefix_size;
@@ -74,7 +74,7 @@ void StringView::RemovePrefix(size_t prefix_size) {
 }
 
 void StringView::RemoveSuffix(size_t suffix_size) {
-    if (suffix_size >= size_) {
+    if (suffix_size > size_) {
         throw StringViewOutOfRange();
     } else {
         size_ -= suffix_size;
