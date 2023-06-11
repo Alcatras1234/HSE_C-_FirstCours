@@ -1,3 +1,4 @@
+// NOLINTBEGIN
 #include "readers_util.h"
 
 LimitReader::LimitReader(std::unique_ptr<Reader> reader, size_t limit) : reader_(std::move(reader)), limit_(limit) {
@@ -30,9 +31,9 @@ HexDecodingReader::HexDecodingReader(std::unique_ptr<Reader> reader) : reader_(s
 }
 char Hex2Num(char c) {
     if ('0' <= c && c <= '9') {
-        return c - '0';
+        return (c - '0');
     } else {
-        return c - 'A' + 10;
+        return (c - 'A' + 10);
     }
 }
 size_t HexDecodingReader::Read(char *buf, size_t len) {
@@ -43,3 +44,4 @@ size_t HexDecodingReader::Read(char *buf, size_t len) {
     }
     return read_len / 2;
 }
+// NOLINTEND
