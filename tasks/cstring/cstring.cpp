@@ -64,7 +64,7 @@ char* Strcat(char* dest, const char* src) {
 char* Strncat(char* dest, const char* src, size_t count) {
     char* contain = dest;
     size_t length_dest = Strlen(dest);
-    if (Strlen(src) < count) {
+    if (Strlen(src) + 1 < count) {
         return Strcat(dest, src);
     } else {
         for (size_t i = length_dest; i < count; ++i) {
