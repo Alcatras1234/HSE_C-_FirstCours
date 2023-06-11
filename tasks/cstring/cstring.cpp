@@ -49,6 +49,7 @@ char* Strncpy(char* dest, const char* src, size_t count) {
     while (count > 0) {
         *dest = '\0';
         --count;
+        ++dest;
     }
     return copy;
 }
