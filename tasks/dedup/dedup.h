@@ -1,9 +1,9 @@
 #pragma once
 
 #include <memory>
-#include <vector>
-#include <string>
 #include <set>
+#include <string>
+#include <vector>
 
 using std::string;
 
@@ -16,11 +16,10 @@ std::vector<std::unique_ptr<T>> Duplicate(const std::vector<std::shared_ptr<T>>&
     return unshared;
 }
 
-
 template <class T>
 std::vector<std::shared_ptr<T>> DeDuplicate(const std::vector<std::unique_ptr<T>>& items) {
     struct ComparePtrs {
-        bool operator() (const std::shared_ptr<T> &lhs, const std::shared_ptr<T> &rhs) const {
+        bool operator()(const std::shared_ptr<T>& lhs, const std::shared_ptr<T>& rhs) const {
             return *lhs < *rhs;
         }
     };
