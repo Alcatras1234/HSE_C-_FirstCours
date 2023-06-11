@@ -36,8 +36,15 @@ char* Strcpy(char* dest, const char* src) {
 
 char* Strncpy(char* dest, const char* src, size_t count) {
     char* copy = dest;
-    for (size_t i = 0; i < count; ++i) {
-        *(dest + i) = *(src + i);
+    while (count > 0 && *src != '\0') {
+        *dest = *src;
+        ++dest;
+        ++src;
+        --count;
+    }
+    while (count > 0) {
+        *dest = '\0';
+        --count;
     }
     return copy;
 }
