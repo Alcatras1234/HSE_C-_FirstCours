@@ -34,7 +34,7 @@ public:
     T& operator*() const {
         return *ptr_;
     }
-    operator bool() const {
+    explicit operator bool() const {
         return ptr_ != nullptr;
     }
 
