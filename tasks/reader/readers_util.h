@@ -37,4 +37,4 @@ public:
 private:
     std::unique_ptr<Reader> reader_;
 };
-// NOLINTED
+// NOLINTEND

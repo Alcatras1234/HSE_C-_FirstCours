@@ -40,4 +40,4 @@ size_t FdReader::Read(char* buf, size_t len) {
     }
     return res;
 }
-// NOLINTED
+// NOLINTEND

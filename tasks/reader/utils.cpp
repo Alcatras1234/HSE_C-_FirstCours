@@ -12,4 +12,4 @@ TeeReader MakeTee(const std::vector<std::string>& chunks) {
     }
     return TeeReader(std::move(readers));
 }
-// NOLINTED
+// NOLINTEND

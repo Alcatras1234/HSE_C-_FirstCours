@@ -41,4 +41,4 @@ public:
 private:
     int fd_;
 };
-// NOLINTED
+// NOLINTEND
