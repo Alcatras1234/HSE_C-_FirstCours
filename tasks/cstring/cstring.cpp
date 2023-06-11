@@ -40,7 +40,7 @@ char* Strcpy(char* dest, const char* src) {
 
 char* Strncpy(char* dest, const char* src, size_t count) {
     char* copy = dest;
-    while (count > 0 && *src != '\0') {
+    while (*src != '\0' && count > 0) {
         *dest = *src;
         ++dest;
         ++src;
@@ -55,13 +55,15 @@ char* Strncpy(char* dest, const char* src, size_t count) {
 
 char* Strcat(char* dest, const char* src) {
     char* contain = dest;
-    size_t length_dest = Strlen(dest);
-    size_t length_src = Strlen(src) + 1;
-    for (size_t i = length_dest; i < length_src; ++i) {
-        *(dest + i) = *(src);
+    while (*dest != '\0') {
+        ++dest;
+    }
+    while (*src != '\0') {
+        *dest = *src;
+        ++dest;
         ++src;
     }
-
+    *dest = '\0';
     return contain;
 }
 
