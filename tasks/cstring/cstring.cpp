@@ -9,7 +9,7 @@ size_t Strlen(const char* str) {
 }
 
 int Strcmp(const char* first, const char* second) {
-    while (*first != '\0' && *second != '\0' && *first == *second) {
+    while (*first == *second && *first != '\0' && *second != '\0') {
         ++first;
         ++second;
     }
