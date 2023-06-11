@@ -17,13 +17,13 @@ int Strcmp(const char* first, const char* second) {
 }
 
 int Strncmp(const char* first, const char* second, size_t count) {
+    if (count == 0) {
+        return 0;
+    }
     while (*first != '\0' && *second != '\0' && *first == *second && count > 0) {
         ++first;
         ++second;
         --count;
-    }
-    if (count == 0) {
-        return 0;
     }
     return *first - *second;
 }
