@@ -1,4 +1,4 @@
-//NOLINTBEGIN
+// NOLINTBEGIN
 #pragma once
 
 #include <unistd.h>
@@ -41,4 +41,4 @@ public:
 private:
     int fd_;
 };
-//NOLINTED
+// NOLINTED

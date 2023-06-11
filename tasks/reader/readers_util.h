@@ -1,4 +1,4 @@
-//NOLINTBEGIN
+// NOLINTBEGIN
 #pragma once
 
 #include <memory>
@@ -37,4 +37,4 @@ public:
 private:
     std::unique_ptr<Reader> reader_;
 };
-//NOLINTED
+// NOLINTED
