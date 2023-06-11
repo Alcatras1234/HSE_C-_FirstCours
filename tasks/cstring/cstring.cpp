@@ -126,8 +126,8 @@ size_t Strcspn(const char* dest, const char* src) {
 const char* Strpbrk(const char* dest, const char* breakset) {
     const char* result = nullptr;
     while (*dest != '\0' && *breakset != '\0') {
-        if (*dest == *breakset) {
-            result = dest;
+        if (*breakset == *dest) {
+            result = breakset;
             break;
         }
         ++dest;
