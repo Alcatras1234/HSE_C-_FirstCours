@@ -22,6 +22,9 @@ int Strncmp(const char* first, const char* second, size_t count) {
         ++second;
         --count;
     }
+    if (count == 0) {
+        return 0;
+    }
     return *first - *second;
 }
 
@@ -68,6 +71,10 @@ char* Strncat(char* dest, const char* src, size_t count) {
         return Strcat(dest, src);
     } else {
         for (size_t i = length_dest; i < count; ++i) {
+            if (*src == '\0') {
+                *(dest + i) = '\0';
+                break;
+            }
             *(dest + i) = *(src);
             ++src;
         }
