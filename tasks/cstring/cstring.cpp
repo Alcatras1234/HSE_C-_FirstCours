@@ -77,7 +77,7 @@ const char* Strchr(const char* str, char symbol) {
     }
     return nullptr;
 }
-const char* Strrchr(const char* str, char symbol){
+const char* Strrchr(const char* str, char symbol) {
     const char* result = nullptr;
     size_t length_str = Strlen(str) + 1;
     for (size_t i = 0; i < length_str; ++i) {
@@ -87,7 +87,7 @@ const char* Strrchr(const char* str, char symbol){
     }
     return result;
 }
-size_t Strspn(const char* dest, const char* src){
+size_t Strspn(const char* dest, const char* src) {
     size_t count = 0;
     size_t length_dest = Strlen(dest);
     for (size_t i = 0; i < length_dest; ++i) {
@@ -98,7 +98,6 @@ size_t Strspn(const char* dest, const char* src){
         }
     }
     return count;
-
 }
 size_t Strcspn(const char* dest, const char* src) {
     size_t count = 0;
@@ -112,9 +111,9 @@ size_t Strcspn(const char* dest, const char* src) {
     }
     return count;
 }
-const char* Strpbrk(const char* dest, const char* breakset){
+const char* Strpbrk(const char* dest, const char* breakset) {
     const char* result = nullptr;
-    while(*dest != '\0' && *breakset != '\0') {
+    while (*dest != '\0' && *breakset != '\0') {
         if (*dest == *breakset) {
             result = dest;
             break;
@@ -124,7 +123,7 @@ const char* Strpbrk(const char* dest, const char* breakset){
     }
     return result;
 }
-const char* Strstr(const char* str, const char* pattern){
+const char* Strstr(const char* str, const char* pattern) {
     if (*pattern == '\0') {
         return str;
     }
