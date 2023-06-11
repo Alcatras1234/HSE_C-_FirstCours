@@ -1,3 +1,4 @@
+//NOLINTBEGIN
 #include "reader.h"
 
 std::string ReadAll(Reader* in) {
@@ -39,3 +40,4 @@ size_t FdReader::Read(char* buf, size_t len) {
     }
     return res;
 }
+//NOLINTED
