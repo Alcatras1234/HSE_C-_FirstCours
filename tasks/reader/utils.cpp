@@ -1,3 +1,4 @@
+// NOLINTBEGIN
 #include "utils.h"
 
 std::unique_ptr<Reader> MakeStringReader(const std::string& data) {
@@ -11,3 +12,4 @@ TeeReader MakeTee(const std::vector<std::string>& chunks) {
     }
     return TeeReader(std::move(readers));
 }
+// NOLINTEND

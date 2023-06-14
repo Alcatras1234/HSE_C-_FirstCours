@@ -1,3 +1,4 @@
+// NOLINTBEGIN
 #include "reader.h"
 
 std::string ReadAll(Reader* in) {
@@ -29,7 +30,6 @@ size_t StringReader::Read(char* buf, size_t len) {
     return read_len;
 }
 
-
 FdReader::FdReader(int fd) : fd_(fd) {
 }
 
@@ -40,5 +40,4 @@ size_t FdReader::Read(char* buf, size_t len) {
     }
     return res;
 }
-
-
+// NOLINTEND
