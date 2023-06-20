@@ -2,9 +2,10 @@
 
 #include <utility>
 
-Any::Any() {}
+Any::Any() {
+}
 
-Any::Any(const Any &rhs) : ptr_(rhs.ptr_->Clone()){
+Any::Any(const Any& rhs) : ptr_(rhs.ptr_->Clone()) {
 }
 
 Any& Any::operator=(Any rhs) {
