@@ -17,3 +17,9 @@ public:
 private:
     Iterator begin_, end_;
 };
+
+template<typename T>
+auto Reversed(T&& container)
+{
+    return (container.rbegin(), container.rend());
+}
