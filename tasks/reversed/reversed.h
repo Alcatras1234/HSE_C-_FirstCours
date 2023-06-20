@@ -21,5 +21,5 @@ private:
 template<typename T>
 auto Reversed(T&& container)
 {
-    return (container.rbegin(), container.rend());
+    return IteratorRange(container.rbegin(), container.rend());
 }
