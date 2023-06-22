@@ -80,7 +80,6 @@ public:
         return {range_.end(), start_ + std::distance(range_.begin(), range_.end())};
     }
 
-
 private:
     Range<Iter> range_;
     Idx start_;
