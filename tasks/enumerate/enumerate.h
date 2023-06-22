@@ -1,3 +1,4 @@
+// NOLINTBEGIN
 #pragma once
 
 #include <iterator>
@@ -23,7 +24,6 @@ private:
 
 template <typename Iter, typename Idx = typename std::iterator_traits<Iter>::difference_type>
 class Enum {
-    // NOLINTBEGIN
 public:
     explicit Enum(Range<Iter> range, Idx start = Idx{}) : range_(range), start_(start) {
     }
@@ -79,7 +79,7 @@ public:
     iterator end() const {
         return {range_.end(), start_ + std::distance(range_.begin(), range_.end())};
     }
-    // NOLINTEND
+
 
 private:
     Range<Iter> range_;
@@ -97,3 +97,4 @@ template <typename Container>
     using std::cbegin, std::cend;
     return Enum{Range{cbegin(cont), cend(cont)}};
 }
+// NOLINTEND
