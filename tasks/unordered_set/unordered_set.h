@@ -7,13 +7,13 @@
 template <typename KeyT>
 class UnorderedSet {
 public:
-    UnorderedSet() : n_elements_(0), data_(0){
+    UnorderedSet() : n_elements_(0), data_(0) {
     }
 
-    explicit UnorderedSet(size_t count) :n_elements_(0), data_(count) {
+    explicit UnorderedSet(size_t count) : n_elements_(0), data_(count) {
     }
 
-    UnorderedSet(const UnorderedSet& other) : n_elements_(other.n_elements_), data_(other.data_){
+    UnorderedSet(const UnorderedSet& other) : n_elements_(other.n_elements_), data_(other.data_) {
     }
 
     UnorderedSet(UnorderedSet&& other) noexcept : n_elements_(other.n_elements_), data_(std::move(other.data_)) {
@@ -44,7 +44,6 @@ public:
         }
         return *this;
     }
-
 
     UnorderedSet& operator=(const UnorderedSet& other) {
         if (this != &other) {
@@ -169,7 +168,6 @@ public:
             return std::hash<KeyT>{}(key) % data_.size();
         }
     }
-
 
 private:
     size_t n_elements_;
