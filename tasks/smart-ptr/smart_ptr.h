@@ -263,7 +263,6 @@ public:
         count_ = nullptr;
     }
 
-
 private:
     template <class N>
     friend class SharedPtr;
